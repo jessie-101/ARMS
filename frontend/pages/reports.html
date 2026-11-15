@@ -1,0 +1,241 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARMS | Reports</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+
+<!-- TOP NAVIGATION -->
+<header class="dashboard-navbar">
+    <div class="dashboard-logo">
+        ARMS
+    </div>
+    <div class="student-info">
+        <span>Student</span>
+        <button class="logout-btn" id="logoutBtn">
+            Logout
+        </button>
+    </div>
+</header>
+
+<!-- DASHBOARD LAYOUT -->
+<div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h3>Student Portal</h3>
+        <nav>
+            <a href="student-dashboard.html">
+                Dashboard
+            </a>
+            <a href="profile.html">
+                My Profile
+            </a>
+            <a href="attachment.html">
+                Attachment
+            </a>
+            <a href="logbook.html">
+                Digital Logbook
+            </a>
+            <a href="evaluation.html">
+                Evaluation
+            </a>
+            <a href="notifications.html">
+                Notifications
+            </a>
+            <a href="reports.html" class="active">
+                Reports
+            </a>
+        </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-content">
+
+        <!-- PAGE HEADER -->
+        <div class="dashboard-header">
+            <h1>
+                Attachment Reports
+            </h1>
+            <p>
+                View your attachment summary and generate your report.
+            </p>
+        </div>
+
+        <!-- REPORT ACTIONS -->
+        <section class="dashboard-section">
+            <div class="report-action-header">
+                <div>
+                    <h2>
+                        Attachment Report
+                    </h2>
+                    <p>
+                        Generate a summary of your industrial attachment records.
+                    </p>
+                </div>
+                <button class="report-btn" id="generateReportBtn">
+                    Generate Report
+                </button>
+            </div>
+        </section>
+
+        <!-- STUDENT INFORMATION -->
+        <section class="dashboard-section">
+            <h2>
+                Student Information
+            </h2>
+            <div class="report-grid">
+
+                <div class="report-item">
+                    <span>Student Name</span>
+                    <strong id="reportStudentName">
+                        Student Name
+                    </strong>
+                </div>
+
+                <div class="report-item">
+                    <span>Registration Number</span>
+                    <strong id="reportRegistration">
+                        REG/0000/0000
+                    </strong>
+                </div>
+
+                <div class="report-item">
+                    <span>Course</span>
+                    <strong id="reportCourse">
+                        Computer Science
+                    </strong>
+                </div>
+
+                <div class="report-item">
+                    <span>Year of Study</span>
+                    <strong id="reportYear">
+                        Year 3
+                    </strong>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ATTACHMENT SUMMARY -->
+        <section class="dashboard-section">
+            <h2>
+                Attachment Summary
+            </h2>
+            <div class="report-grid">
+
+                <div class="report-item">
+                    <span>Organization</span>
+                    <strong id="reportOrganization">
+                        Not Registered
+                    </strong>
+                </div>
+
+                <div class="report-item">
+                    <span>Department</span>
+                    <strong id="reportDepartment">
+                        Not Available
+                    </strong>
+                </div>
+
+                <div class="report-item">
+                    <span>Start Date</span>
+                    <strong id="reportStartDate">
+                        Not Available
+                    </strong>
+                </div>
+
+                <div class="report-item">
+                    <span>End Date</span>
+                    <strong id="reportEndDate">
+                        Not Available
+                    </strong>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROGRESS SUMMARY -->
+        <section class="dashboard-section">
+            <h2>
+                Attachment Progress
+            </h2>
+            <div class="report-progress-grid">
+
+                <!-- LOGBOOK -->
+                <div class="progress-card">
+                    <div>
+                        <span>Logbook Entries</span>
+                        <strong id="reportLogbookCount">
+                            0
+                        </strong>
+                    </div>
+                </div>
+
+                <!-- EVALUATION -->
+                <div class="progress-card">
+                    <div>
+                        <span>Evaluation Score</span>
+                        <strong id="reportEvaluationScore">
+                            --
+                        </strong>
+                    </div>
+                </div>
+
+                <!-- STATUS -->
+                <div class="progress-card">
+                    <div>
+                        <span>Attachment Status</span>
+                        <strong id="reportAttachmentStatus">
+                            Pending
+                        </strong>
+                    </div>
+                </div>
+
+                <!-- REPORT STATUS -->
+                <div class="progress-card">
+                    <div>
+                        <span>Report Status</span>
+                        <strong id="reportStatus">
+                            Not Generated
+                        </strong>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- REPORT INFORMATION -->
+              <section class="dashboard-section" id="reportViewerSection" style="display:none;">
+            <div class="section-heading">
+                <h2 id="reportViewerTitle">Report</h2>
+                <button class="report-btn" id="downloadReportBtn">Download (.txt)</button>
+            </div>
+            <pre id="reportViewerContent" style="white-space:pre-wrap; background:#f7f8fa; padding:16px; border-radius:8px; overflow-x:auto;"></pre>
+        </section>
+
+        <section class="dashboard-section">
+            <h2>My Generated Reports</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr><th>Report</th><th>Generated</th><th></th></tr>
+                    </thead>
+                    <tbody id="reportsListBody">
+                        <tr><td colspan="3">No reports generated yet.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

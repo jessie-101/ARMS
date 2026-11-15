@@ -1,0 +1,258 @@
+﻿ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARMS | Attachment Details</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+
+<!-- Top Navigation -->
+<header class="dashboard-navbar">
+    <div class="dashboard-logo">
+        ARMS
+    </div>
+    <div class="student-info">
+        <span>Student</span>
+        <button class="logout-btn" id="logoutBtn">
+            Logout
+        </button>
+    </div>
+</header>
+
+<div class="dashboard-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h3>Student Portal</h3>
+        <nav>
+            <a href="student-dashboard.html">
+                Dashboard
+            </a>
+            <a href="profile.html">
+                My Profile
+            </a>
+            <a href="attachment.html" class="active">
+                Attachment
+            </a>
+            <a href="logbook.html">
+                Digital Logbook
+            </a>
+            <a href="evaluation.html">
+                Evaluation
+            </a>
+            <a href="notifications.html">
+                Notifications
+            </a>
+            <a href="reports.html">
+                Reports
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-content">
+
+        <div class="dashboard-header">
+            <h1>Attachment Details</h1>
+            <p>
+                Enter the details of your industrial attachment placement.
+            </p>
+        </div>
+
+        <!-- Error / success message area -->
+        <p id="attachmentMessage" class="form-error" style="display:none;"></p>
+
+        <!-- Attachment Form -->
+        <section class="dashboard-section" id="attachmentFormSection">
+
+            <h2>Placement Information</h2>
+
+            <form id="attachmentForm">
+
+                <div class="profile-grid">
+
+                    <!-- Organization Name -->
+                    <div class="form-group">
+                        <label for="organizationName">
+                            Organization / Company Name
+                        </label>
+                        <input
+                            type="text"
+                            id="organizationName"
+                            name="organizationName"
+                            placeholder="Enter organization name"
+                            required
+                        >
+                    </div>
+
+                    <!-- Organization Type -->
+                    <div class="form-group">
+                        <label for="organizationType">
+                            Organization Type
+                        </label>
+                        <select
+                            id="organizationType"
+                            name="organizationType"
+                        >
+                            <option value="">Select type</option>
+                            <option value="Government">Government</option>
+                            <option value="Private">Private</option>
+                            <option value="NGO">NGO</option>
+                            <option value="Parastatal">Parastatal</option>
+                        </select>
+                    </div>
+
+                    <!-- Department -->
+                    <div class="form-group">
+                        <label for="department">
+                            Department
+                        </label>
+                        <input
+                            type="text"
+                            id="department"
+                            name="department"
+                            placeholder="e.g. ICT Department"
+                        >
+                    </div>
+
+                    <!-- County -->
+                    <div class="form-group">
+                        <label for="county">
+                            County
+                        </label>
+                        <input
+                            type="text"
+                            id="county"
+                            name="county"
+                            placeholder="Enter county"
+                        >
+                    </div>
+
+                    <!-- Town -->
+                    <div class="form-group">
+                        <label for="location">
+                            Town
+                        </label>
+                        <input
+                            type="text"
+                            id="location"
+                            name="location"
+                            placeholder="Enter town"
+                        >
+                    </div>
+
+                    <!-- Supervisor Name -->
+                    <div class="form-group">
+                        <label for="supervisorName">
+                            Company Supervisor
+                        </label>
+                        <input
+                            type="text"
+                            id="supervisorName"
+                            name="supervisorName"
+                            placeholder="Enter supervisor name"
+                        >
+                    </div>
+
+                    <!-- Supervisor Email -->
+                    <div class="form-group">
+                        <label for="supervisorEmail">
+                            Supervisor Email
+                        </label>
+                        <input
+                            type="email"
+                            id="supervisorEmail"
+                            name="supervisorEmail"
+                            placeholder="Enter supervisor email"
+                        >
+                    </div>
+
+                    <!-- Supervisor Phone -->
+                    <div class="form-group">
+                        <label for="supervisorPhone">
+                            Supervisor Phone
+                        </label>
+                        <input
+                            type="tel"
+                            id="supervisorPhone"
+                            name="supervisorPhone"
+                            placeholder="Enter supervisor phone"
+                        >
+                    </div>
+
+                    <!-- Start Date -->
+                    <div class="form-group">
+                        <label for="startDate">
+                            Attachment Start Date
+                        </label>
+                        <input
+                            type="date"
+                            id="startDate"
+                            name="startDate"
+                            required
+                        >
+                    </div>
+
+                    <!-- End Date -->
+                    <div class="form-group">
+                        <label for="endDate">
+                            Attachment End Date
+                        </label>
+                        <input
+                            type="date"
+                            id="endDate"
+                            name="endDate"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <!-- Buttons -->
+                <div class="attachment-actions">
+                    <button
+                        type="submit"
+                        class="auth-btn"
+                    >
+                        Save Attachment Details
+                    </button>
+                    <button
+                        type="reset"
+                        class="reset-btn"
+                    >
+                        Clear Form
+                    </button>
+                </div>
+
+            </form>
+
+        </section>
+
+        <!-- Current Attachment -->
+              <section class="dashboard-section">
+            <h2>Current Attachment</h2>
+            <p id="noAttachmentText">No attachment registered yet. Fill in the form above.</p>
+            <div class="report-grid" id="attachmentDetails" style="display:none;">
+                <div class="report-item"><span>Organization</span><strong id="caOrganization"></strong></div>
+                <div class="report-item"><span>Organization Type</span><strong id="caType"></strong></div>
+                <div class="report-item"><span>Department</span><strong id="caDepartment"></strong></div>
+                <div class="report-item"><span>Location</span><strong id="caLocation"></strong></div>
+                <div class="report-item"><span>Start Date</span><strong id="caStart"></strong></div>
+                <div class="report-item"><span>End Date</span><strong id="caEnd"></strong></div>
+                <div class="report-item"><span>Company Supervisor</span><strong id="caSupervisor"></strong></div>
+                <div class="report-item"><span>Company Supervisor Phone</span><strong id="caSupervisorPhone"></strong></div>
+                <div class="report-item"><span>Company Supervisor Email</span><strong id="caSupervisorEmail"></strong></div>
+                <div class="report-item"><span>Status</span><strong id="caStatus"></strong></div>
+            </div>
+        </section>
+
+    </main>
+
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

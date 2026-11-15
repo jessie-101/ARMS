@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ARMS | Evaluation</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+
+
+<body>
+
+
+    <!-- TOP NAVIGATION -->
+    <header class="dashboard-navbar">
+
+        <div class="dashboard-logo">
+            ARMS
+        </div>
+
+
+        <div class="student-info">
+
+            <span>Student</span>
+
+            <button
+                class="logout-btn"
+                id="logoutBtn">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- DASHBOARD LAYOUT -->
+    <div class="dashboard-layout">
+
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <h3>Student Portal</h3>
+
+
+            <nav>
+
+                <a href="student-dashboard.html">
+                    Dashboard
+                </a>
+
+
+                <a href="profile.html">
+                    My Profile
+                </a>
+
+
+                <a href="attachment.html">
+                    Attachment
+                </a>
+
+
+                <a href="logbook.html">
+                    Digital Logbook
+                </a>
+
+
+                <a
+                    href="evaluation.html"
+                    class="active">
+
+                    Evaluation
+
+                </a>
+
+
+                <a href="notifications.html">
+                    Notifications
+                </a>
+
+
+                <a href="reports.html">
+                    Reports
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+
+        <!-- MAIN CONTENT -->
+        <main class="dashboard-content">
+
+
+            <!-- PAGE HEADER -->
+            <div class="dashboard-header">
+
+                <h1>
+                    Supervisor Evaluation
+                </h1>
+
+                <p>
+                    View your attachment evaluation and supervisor feedback.
+                </p>
+
+            </div>
+
+
+
+            <!-- EVALUATION STATUS -->
+            <section class="dashboard-section">
+
+                <h2>
+                    Evaluation Status
+                </h2>
+
+
+                <div class="evaluation-status-card">
+
+
+                    <div class="evaluation-status-info">
+
+                        <h3 id="evaluationStatus">
+                            Evaluation Pending
+                        </h3>
+
+                        <p id="evaluationMessage">
+                            Your supervisor has not submitted an evaluation yet.
+                        </p>
+
+                    </div>
+
+
+                    <span
+                        class="status-badge"
+                        id="evaluationBadge">
+
+                        Pending
+
+                    </span>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- SUPERVISOR INFORMATION -->
+            <section class="dashboard-section">
+
+                <h2>
+                    Supervisor Information
+                </h2>
+
+
+                <div class="profile-grid">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Supervisor Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="evaluationSupervisor"
+                            value="Not Assigned"
+                            readonly
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Department
+                        </label>
+
+                        <input
+                            type="text"
+                            id="evaluationDepartment"
+                            value="Not Available"
+                            readonly
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Supervisor Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="evaluationEmail"
+                            value="Not Available"
+                            readonly
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Evaluation Date
+                        </label>
+
+                        <input
+                            type="text"
+                            id="evaluationDate"
+                            value="Not Evaluated"
+                            readonly
+                        >
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- EVALUATION SCORE -->
+            <section class="dashboard-section">
+
+                <h2>
+                    Evaluation Result
+                </h2>
+
+
+                <div class="evaluation-score-card">
+
+
+                    <div class="score-circle">
+
+                        <span id="evaluationScore">
+                            --
+                        </span>
+
+                        <small>
+                            / 100
+                        </small>
+
+                    </div>
+
+
+                    <div class="score-information">
+
+                        <h3>
+                            Overall Score
+                        </h3>
+
+                        <p id="scoreMessage">
+                            Your score will appear here after your supervisor completes the evaluation.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- SUPERVISOR COMMENTS -->
+            <section class="dashboard-section">
+
+                <h2>
+                    Supervisor Comments
+                </h2>
+
+
+                <div class="comments-box">
+
+                    <p id="supervisorComments">
+
+                        No supervisor comments available yet.
+
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+        </main>
+
+    </div>
+
+
+
+    <script src="../js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+﻿ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARMS | Evaluations</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+
+<header class="dashboard-navbar">
+    <div class="dashboard-logo">ARMS</div>
+    <div class="student-info">
+        <span id="supervisorGreetingName">Supervisor</span>
+        <button class="logout-btn" id="logoutBtn">Logout</button>
+    </div>
+</header>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+        <h3>Supervisor Portal</h3>
+        <nav>
+            <a href="supervisor-dashboard.html">Dashboard</a>
+            <a href="supervisor-students.html">My Students</a>
+            <a href="supervisor-logbooks.html">Logbook Entries</a>
+            <a href="supervisor-evaluations.html" class="active">Evaluations</a>
+            <a href="supervisor-notifications.html">Notifications</a>
+            <a href="supervisor-reports.html">Reports</a>
+        </nav>
+    </aside>
+
+    <main class="dashboard-content">
+
+        <div class="dashboard-header">
+            <h1>Submit Evaluation</h1>
+            <p>Evaluate one of your assigned students.</p>
+        </div>
+
+        <p id="evalMessage" class="form-error" style="display:none;"></p>
+
+        <section class="dashboard-section">
+            <form id="evaluationForm">
+
+                <div class="form-group">
+                    <label for="evalStudentSelect">Select Student</label>
+                    <select id="evalStudentSelect" required>
+                        <option value="">Loading students...</option>
+                    </select>
+                </div>
+
+                <div class="profile-grid">
+                    <div class="form-group">
+                        <label for="evalTechnical">Technical Skills (1-10)</label>
+                        <input type="number" id="evalTechnical" min="1" max="10" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="evalCommunication">Communication (1-10)</label>
+                        <input type="number" id="evalCommunication" min="1" max="10" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="evalTeamwork">Teamwork (1-10)</label>
+                        <input type="number" id="evalTeamwork" min="1" max="10" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="evalPunctuality">Punctuality (1-10)</label>
+                        <input type="number" id="evalPunctuality" min="1" max="10" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="evalDate">Evaluation Date</label>
+                        <input type="date" id="evalDate" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="evalRemarks">Remarks</label>
+                    <textarea id="evalRemarks" rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="auth-btn">Submit Evaluation</button>
+
+            </form>
+        </section>
+
+    </main>
+
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

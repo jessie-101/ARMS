@@ -1,0 +1,68 @@
+﻿ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARMS | My Students</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+
+<header class="dashboard-navbar">
+    <div class="dashboard-logo">ARMS</div>
+    <div class="student-info">
+        <span id="supervisorGreetingName">Supervisor</span>
+        <button class="logout-btn" id="logoutBtn">Logout</button>
+    </div>
+</header>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+        <h3>Supervisor Portal</h3>
+        <nav>
+            <a href="supervisor-dashboard.html">Dashboard</a>
+            <a href="supervisor-students.html" class="active">My Students</a>
+            <a href="supervisor-logbooks.html">Logbook Entries</a>
+            <a href="supervisor-evaluations.html">Evaluations</a>
+            <a href="supervisor-notifications.html">Notifications</a>
+            <a href="supervisor-reports.html">Reports</a>
+        </nav>
+    </aside>
+
+    <main class="dashboard-content">
+
+        <div class="dashboard-header">
+            <h1>My Students</h1>
+            <p>All students currently assigned to you.</p>
+        </div>
+
+        <section class="dashboard-section">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Registration No.</th>
+                            <th>Course</th>
+                            <th>Year</th>
+                            <th>Organization</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentsTableBody">
+                        <tr><td colspan="7">Loading...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

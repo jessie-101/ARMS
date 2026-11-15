@@ -1,0 +1,215 @@
+﻿ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARMS | Student Registration</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+
+<!-- Navigation -->
+<header class="navbar">
+    <div class="logo">
+        ARMS
+    </div>
+    <nav>
+        <a href="../index.html">
+            Home
+        </a>
+        <a href="login.html">
+            Login
+        </a>
+        <a href="register.html">
+            Register
+        </a>
+    </nav>
+</header>
+
+<!-- Registration Section -->
+<main class="auth-container">
+    <div class="auth-card registration-card">
+        <div class="auth-header">
+            <h1>Create Account</h1>
+            <p>
+                Register as an ARMS student
+            </p>
+        </div>
+
+        <!-- Error message area -->
+        <p id="registerError" class="form-error" style="display:none; color:#c0392b;"></p>
+
+        <!-- Registration Form -->
+        <form id="registerForm">
+
+            <!-- Registration Number -->
+            <div class="form-group">
+                <label for="registrationNumber">
+                    Registration Number
+                </label>
+                <input
+                    type="text"
+                    id="registrationNumber"
+                    name="registrationNumber"
+                    placeholder="Enter registration number"
+                    required
+                >
+            </div>
+
+            <!-- First Name -->
+            <div class="form-group">
+                <label for="firstName">
+                    First Name
+                </label>
+                <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    placeholder="Enter first name"
+                    required
+                >
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-group">
+                <label for="lastName">
+                    Last Name
+                </label>
+                <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    placeholder="Enter last name"
+                    required
+                >
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">
+                    Email Address
+                </label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter email address"
+                    required
+                >
+            </div>
+
+            <!-- Phone -->
+            <div class="form-group">
+                <label for="phoneNumber">
+                    Phone Number
+                </label>
+                <input
+                    type="tel"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    placeholder="Enter phone number"
+                    required
+                >
+            </div>
+
+            <!-- Course -->
+            <div class="form-group">
+                <label for="course">
+                    Course
+                </label>
+                <input
+                    type="text"
+                    id="course"
+                    name="course"
+                    placeholder="e.g. Bachelor of Science in Computer Science"
+                    required
+                >
+            </div>
+
+            <!-- Year of Study -->
+            <div class="form-group">
+                <label for="yearOfStudy">
+                    Year of Study
+                </label>
+                <select
+                    id="yearOfStudy"
+                    name="yearOfStudy"
+                    required
+                >
+                    <option value="">
+                        Select year of study
+                    </option>
+                    <option value="1">
+                        Year 1
+                    </option>
+                    <option value="2">
+                        Year 2
+                    </option>
+                    <option value="3">
+                        Year 3
+                    </option>
+                    <option value="4">
+                        Year 4
+                    </option>
+                </select>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password">
+                    Password
+                </label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Create password"
+                    required
+                >
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group">
+                <label for="confirmPassword">
+                    Confirm Password
+                </label>
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    placeholder="Confirm password"
+                    required
+                >
+            </div>
+
+            <!-- Register Button -->
+            <button
+                type="submit"
+                class="auth-btn"
+            >
+                Create Account
+            </button>
+
+        </form>
+
+        <!-- Login Link -->
+        <p class="auth-footer">
+            Already have an account?
+            <a href="login.html">
+                Login here
+            </a>
+        </p>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer>
+    <p>
+        © 2026 Attachment Record Management System
+    </p>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,3760 @@
+ /* =====================================================
+   ARMS - ATTACHMENT RECORD MANAGEMENT SYSTEM
+   COMPLETE FRONTEND STYLESHEET
+===================================================== */
+
+
+/* =====================================================
+   GENERAL RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f5f7fb;
+
+    color: #1f2937;
+}
+
+
+/* =====================================================
+   NORMAL WEBSITE NAVIGATION
+===================================================== */
+
+.navbar {
+    width: 100%;
+    height: 70px;
+
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 8%;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 30px;
+
+    font-weight: bold;
+
+    color: #1d4ed8;
+}
+
+.navbar nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+.navbar nav a {
+    text-decoration: none;
+
+    color: #374151;
+
+    font-weight: 500;
+}
+
+.navbar nav a:hover {
+    color: #1d4ed8;
+}
+
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+
+.hero {
+    min-height: 560px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #eff6ff,
+        #ffffff
+    );
+}
+
+.hero-content {
+    width: 100%;
+
+    max-width: 850px;
+}
+
+.welcome {
+    color: #1d4ed8;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 52px;
+
+    line-height: 1.15;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: #1d4ed8;
+}
+
+.description {
+    max-width: 700px;
+
+    margin: 0 auto 35px;
+
+    color: #6b7280;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.hero-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.btn {
+    padding: 14px 32px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: #1d4ed8;
+
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #1e40af;
+}
+
+.secondary-btn {
+    background: white;
+
+    color: #1d4ed8;
+
+    border: 2px solid #1d4ed8;
+}
+
+.secondary-btn:hover {
+    background: #1d4ed8;
+
+    color: white;
+}
+
+
+/* =====================================================
+   FEATURES
+===================================================== */
+
+.features {
+    padding: 70px 8%;
+
+    text-align: center;
+
+    background: white;
+}
+
+.features h2 {
+    font-size: 32px;
+
+    margin-bottom: 10px;
+}
+
+.section-description {
+    color: #6b7280;
+
+    margin-bottom: 40px;
+}
+
+.feature-container {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    width: 250px;
+
+    padding: 30px 25px;
+
+    background: #f8fafc;
+
+    border-radius: 10px;
+
+    border: 1px solid #e5e7eb;
+
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.feature-icon {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    color: #1d4ed8;
+
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: #6b7280;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    background: #111827;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   AUTHENTICATION PAGES
+===================================================== */
+
+.auth-container {
+    min-height: calc(100vh - 140px);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 50px 20px;
+
+    background: #f5f7fb;
+}
+
+.auth-card {
+    width: 100%;
+
+    max-width: 450px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.auth-header {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.auth-header h1 {
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+.auth-header p {
+    color: #6b7280;
+}
+
+
+/* =====================================================
+   FORM ELEMENTS
+===================================================== */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: 600;
+
+    color: #374151;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    outline: none;
+
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #1d4ed8;
+
+    box-shadow:
+        0 0 0 2px rgba(29, 78, 216, 0.1);
+}
+
+
+/* =====================================================
+   REMEMBER ME
+===================================================== */
+
+.remember {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+    font-size: 14px;
+}
+
+.remember label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+.remember a {
+    color: #1d4ed8;
+
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   AUTH BUTTON
+===================================================== */
+
+.auth-btn {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #1d4ed8;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.auth-btn:hover {
+    background: #1e40af;
+}
+
+
+/* =====================================================
+   AUTH FOOTER
+===================================================== */
+
+.auth-footer {
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #6b7280;
+}
+
+.auth-footer a {
+    color: #1d4ed8;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   REGISTRATION PAGE
+===================================================== */
+
+.registration-card {
+    max-width: 520px;
+}
+
+.registration-card .auth-header {
+    margin-bottom: 25px;
+}
+
+.registration-card .auth-btn {
+    margin-top: 5px;
+}
+
+
+/* =====================================================
+   DASHBOARD TOP NAVIGATION
+===================================================== */
+
+.dashboard-navbar {
+    width: 100%;
+
+    height: 70px;
+
+    background: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 30px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    position: relative;
+
+    z-index: 1000;
+
+    flex-shrink: 0;
+}
+
+.dashboard-logo {
+    font-size: 28px;
+
+    font-weight: bold;
+
+    color: #1d4ed8;
+}
+
+.student-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    color: #374151;
+}
+
+.logout-btn {
+    padding: 9px 18px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #dc2626;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: 500;
+}
+
+.logout-btn:hover {
+    background: #b91c1c;
+}
+
+
+/* =====================================================
+   DASHBOARD LAYOUT
+===================================================== */
+
+/*
+   IMPORTANT:
+   The dashboard starts AFTER the 70px header.
+   This prevents the sidebar and content from
+   overlapping the top navigation.
+*/
+
+.dashboard-layout {
+    width: 100%;
+
+    min-height: calc(100vh - 70px);
+
+    display: flex;
+
+    align-items: stretch;
+
+    position: relative;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar {
+    width: 240px;
+
+    min-width: 240px;
+
+    flex-shrink: 0;
+
+    background: #111827;
+
+    color: white;
+
+    padding: 30px 15px;
+
+    min-height: calc(100vh - 70px);
+
+    box-sizing: border-box;
+}
+
+.sidebar h3 {
+    padding: 0 15px 25px;
+
+    margin: 0;
+
+    font-size: 18px;
+}
+
+.sidebar nav {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.sidebar nav a {
+    display: block;
+
+    width: 100%;
+
+    color: #d1d5db;
+
+    text-decoration: none;
+
+    padding: 13px 15px;
+
+    border-radius: 6px;
+
+    box-sizing: border-box;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: #1d4ed8;
+
+    color: white;
+}
+
+
+/* =====================================================
+   DASHBOARD MAIN CONTENT
+===================================================== */
+
+.dashboard-content {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 35px;
+
+    background: #f5f7fb;
+
+    box-sizing: border-box;
+
+    overflow-x: auto;
+
+    overflow-y: visible;
+}
+
+.dashboard-header {
+    width: 100%;
+
+    margin: 0 0 30px 0;
+}
+
+.dashboard-header h1 {
+    font-size: 30px;
+
+    line-height: 1.2;
+
+    margin: 0 0 8px 0;
+}
+
+.dashboard-header p {
+    color: #6b7280;
+
+    margin: 0;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   SUMMARY CARDS
+===================================================== */
+
+.summary-cards {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 35px;
+}
+
+.summary-card {
+    background: white;
+
+    padding: 22px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border: 1px solid #e5e7eb;
+
+    min-width: 0;
+}
+
+.summary-icon {
+    font-size: 32px;
+
+    flex-shrink: 0;
+}
+
+.summary-card h3 {
+    font-size: 14px;
+
+    color: #6b7280;
+
+    margin: 0 0 7px 0;
+}
+
+.summary-card p {
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin: 0;
+}
+
+
+/* =====================================================
+   DASHBOARD SECTIONS
+===================================================== */
+
+.dashboard-section {
+    width: 100%;
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    margin-bottom: 25px;
+
+    border: 1px solid #e5e7eb;
+
+    box-sizing: border-box;
+}
+
+.dashboard-section h2 {
+    margin: 0 0 20px 0;
+
+    font-size: 21px;
+}
+
+
+/* =====================================================
+   QUICK ACTIONS
+===================================================== */
+
+.quick-actions {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.action-card {
+    padding: 25px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    color: #1f2937;
+
+    transition: 0.3s;
+}
+
+.action-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.action-card span {
+    font-size: 30px;
+
+    display: block;
+
+    margin-bottom: 12px;
+}
+
+.action-card h3 {
+    color: #1d4ed8;
+
+    margin: 0 0 8px 0;
+}
+
+.action-card p {
+    color: #6b7280;
+
+    line-height: 1.5;
+
+    font-size: 14px;
+
+    margin: 0;
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.section-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.section-heading h2 {
+    margin-bottom: 0;
+}
+
+.section-heading a {
+    color: #1d4ed8;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 14px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+table th {
+    background: #f9fafb;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   STUDENT PROFILE
+===================================================== */
+
+.profile-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding-bottom: 25px;
+
+    margin-bottom: 30px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.profile-avatar {
+    width: 70px;
+
+    height: 70px;
+
+    border-radius: 50%;
+
+    background: #eff6ff;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 35px;
+
+    flex-shrink: 0;
+}
+
+.profile-header h2 {
+    margin: 0 0 5px 0;
+}
+
+.profile-header p {
+    color: #6b7280;
+
+    margin: 0;
+}
+
+.profile-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.profile-actions {
+    margin-top: 15px;
+
+    max-width: 200px;
+}
+
+.profile-actions .auth-btn {
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   ATTACHMENT PAGE
+===================================================== */
+
+#attachmentForm {
+    width: 100%;
+}
+
+#attachmentForm textarea {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 6px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+
+    resize: vertical;
+
+    outline: none;
+
+    box-sizing: border-box;
+}
+
+#attachmentForm textarea:focus {
+    border-color: #1d4ed8;
+
+    box-shadow:
+        0 0 0 2px rgba(29, 78, 216, 0.1);
+}
+
+.attachment-actions {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 25px;
+
+    max-width: 400px;
+}
+
+.attachment-actions .auth-btn {
+    cursor: pointer;
+}
+
+.reset-btn {
+    padding: 14px 20px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 6px;
+
+    background: white;
+
+    color: #374151;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.reset-btn:hover {
+    background: #f3f4f6;
+}
+
+
+/* =====================================================
+   CURRENT ATTACHMENT
+===================================================== */
+
+.attachment-status-card {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+}
+
+.attachment-status-card h3 {
+    margin: 0 0 8px 0;
+}
+
+.attachment-status-card p {
+    color: #6b7280;
+
+    margin: 0;
+}
+
+.status-badge {
+    display: inline-block;
+
+    padding: 8px 15px;
+
+    border-radius: 20px;
+
+    background: #fef3c7;
+
+    color: #92400e;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   RESPONSIVE - TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .summary-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quick-actions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE - SMALL TABLET
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .navbar nav {
+        gap: 12px;
+    }
+
+    .navbar nav a {
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .btn {
+        width: 200px;
+
+        text-align: center;
+    }
+
+
+    /* Dashboard */
+
+    .dashboard-navbar {
+        padding: 0 15px;
+    }
+
+    .dashboard-layout {
+        min-height: calc(100vh - 70px);
+    }
+
+    .sidebar {
+        width: 190px;
+
+        min-width: 190px;
+
+        padding: 25px 10px;
+    }
+
+    .dashboard-content {
+        padding: 20px;
+    }
+
+    .summary-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE - MOBILE
+===================================================== */
+
+@media (max-width: 550px) {
+
+    .dashboard-navbar {
+        height: 65px;
+
+        padding: 0 12px;
+    }
+
+    .dashboard-layout {
+        min-height: calc(100vh - 65px);
+    }
+
+    .student-info {
+        gap: 8px;
+    }
+
+    .student-info span {
+        display: none;
+    }
+
+    .sidebar {
+        width: 65px;
+
+        min-width: 65px;
+
+        padding: 20px 5px;
+
+        min-height: calc(100vh - 65px);
+    }
+
+    .sidebar h3 {
+        display: none;
+    }
+
+    .sidebar nav a {
+        font-size: 0;
+
+        text-align: center;
+
+        padding: 13px 5px;
+    }
+
+    .dashboard-content {
+        padding: 15px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 25px;
+    }
+
+    .dashboard-section {
+        padding: 18px;
+    }
+
+    .profile-header {
+        align-items: flex-start;
+    }
+
+    .attachment-actions {
+        flex-direction: column;
+
+        max-width: 100%;
+    }
+
+    .attachment-status-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .auth-card {
+        padding: 25px 20px;
+    }
+
+    .dashboard-logo {
+        font-size: 23px;
+    }
+
+    .logout-btn {
+        padding: 8px 12px;
+    }
+
+}
+/* =====================================================
+   DIGITAL LOGBOOK
+===================================================== */
+
+#logbookForm {
+    width: 100%;
+}
+
+#logbookForm textarea {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 6px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+
+    resize: vertical;
+
+    outline: none;
+
+    line-height: 1.5;
+
+    box-sizing: border-box;
+}
+
+#logbookForm textarea:focus {
+    border-color: #1d4ed8;
+
+    box-shadow:
+        0 0 0 2px rgba(29, 78, 216, 0.1);
+}
+
+
+/* Logbook date */
+
+#activityDate {
+    max-width: 300px;
+}
+
+
+/* Logbook table */
+
+#logbookEntries td {
+    vertical-align: top;
+
+    line-height: 1.5;
+}
+
+
+/* Logbook status */
+
+.logbook-status {
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    background: #fef3c7;
+
+    color: #92400e;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    #activityDate {
+        max-width: 100%;
+    }
+
+}
+/* =====================================================
+   SUPERVISOR EVALUATION
+===================================================== */
+
+.evaluation-status-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+}
+
+
+.evaluation-icon {
+    width: 60px;
+
+    height: 60px;
+
+    border-radius: 50%;
+
+    background: #eff6ff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 30px;
+
+    flex-shrink: 0;
+}
+
+
+.evaluation-status-info {
+    flex: 1;
+}
+
+
+.evaluation-status-info h3 {
+    margin: 0 0 7px 0;
+
+    font-size: 18px;
+}
+
+
+.evaluation-status-info p {
+    margin: 0;
+
+    color: #6b7280;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   EVALUATION SCORE
+===================================================== */
+
+.evaluation-score-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 30px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+}
+
+
+.score-circle {
+    width: 120px;
+
+    height: 120px;
+
+    border-radius: 50%;
+
+    background: #eff6ff;
+
+    border: 8px solid #1d4ed8;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    flex-shrink: 0;
+}
+
+
+.score-circle span {
+    font-size: 32px;
+
+    font-weight: bold;
+
+    color: #1d4ed8;
+}
+
+
+.score-circle small {
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+.score-information h3 {
+    margin: 0 0 8px 0;
+}
+
+
+.score-information p {
+    margin: 0;
+
+    color: #6b7280;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   SUPERVISOR COMMENTS
+===================================================== */
+
+.comments-box {
+    min-height: 120px;
+
+    padding: 20px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+}
+
+
+.comments-box p {
+    margin: 0;
+
+    color: #6b7280;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   EVALUATION MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .evaluation-status-card {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .evaluation-score-card {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+}
+/* =====================================================
+   NOTIFICATIONS
+===================================================== */
+
+.notification-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+}
+
+
+.notification-header h2 {
+    margin: 0;
+}
+
+
+.mark-read-btn {
+    padding: 9px 15px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 6px;
+
+    background: white;
+
+    color: #1d4ed8;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.mark-read-btn:hover {
+    background: #eff6ff;
+}
+
+
+/* Notification List */
+
+.notification-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.notification-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 20px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    background: white;
+
+    transition: 0.2s;
+}
+
+
+.notification-item:hover {
+    background: #f9fafb;
+}
+
+
+.notification-item.unread {
+    background: #eff6ff;
+
+    border-left: 4px solid #1d4ed8;
+}
+
+
+.notification-icon {
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: #f3f4f6;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+
+    flex-shrink: 0;
+}
+
+
+.notification-item.unread .notification-icon {
+    background: white;
+}
+
+
+.notification-content {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.notification-title-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 7px;
+}
+
+
+.notification-title-row h3 {
+    margin: 0;
+
+    font-size: 16px;
+}
+
+
+.notification-time {
+    color: #6b7280;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+}
+
+
+.notification-content p {
+    margin: 0 0 12px 0;
+
+    color: #6b7280;
+
+    line-height: 1.6;
+}
+
+
+.notification-type {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 15px;
+
+    background: #e5e7eb;
+
+    color: #374151;
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+
+/* Empty Notifications */
+
+.notification-empty {
+    text-align: center;
+
+    padding: 50px 20px;
+
+    display: none;
+}
+
+
+.empty-icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+
+.notification-empty h2 {
+    margin-bottom: 8px;
+}
+
+
+.notification-empty p {
+    color: #6b7280;
+
+    margin: 0;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .notification-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .mark-read-btn {
+        width: 100%;
+    }
+
+
+    .notification-item {
+        padding: 15px;
+
+        gap: 12px;
+    }
+
+
+    .notification-icon {
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 18px;
+    }
+
+
+    .notification-title-row {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+}
+/* =====================================================
+   REPORTS PAGE
+===================================================== */
+
+.report-action-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+
+.report-action-header h2 {
+    margin: 0 0 8px 0;
+}
+
+
+.report-action-header p {
+    margin: 0;
+
+    color: #6b7280;
+
+    line-height: 1.5;
+}
+
+
+.report-btn {
+    padding: 13px 22px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #1d4ed8;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+
+.report-btn:hover {
+    background: #1e40af;
+}
+
+
+.report-btn:disabled {
+    background: #9ca3af;
+
+    cursor: not-allowed;
+}
+
+
+/* =====================================================
+   REPORT INFORMATION GRID
+===================================================== */
+
+.report-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+.report-item {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    padding: 18px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+}
+
+
+.report-item span {
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+.report-item strong {
+    color: #1f2937;
+
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   REPORT PROGRESS CARDS
+===================================================== */
+
+.report-progress-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+.progress-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+}
+
+
+.progress-icon {
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #eff6ff;
+
+    border-radius: 50%;
+
+    font-size: 22px;
+
+    flex-shrink: 0;
+}
+
+
+.progress-card div:last-child {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.progress-card span {
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+.progress-card strong {
+    color: #1f2937;
+
+    font-size: 18px;
+}
+
+
+/* =====================================================
+   REPORT INFORMATION BOX
+===================================================== */
+
+.report-info-box {
+    padding: 20px;
+
+    background: #f8fafc;
+
+    border-left: 4px solid #1d4ed8;
+
+    border-radius: 6px;
+}
+
+
+.report-info-box p {
+    color: #6b7280;
+
+    line-height: 1.7;
+
+    margin: 0 0 12px 0;
+}
+
+
+.report-info-box p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   REPORT MOBILE
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .report-progress-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .report-action-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .report-btn {
+        width: 100%;
+    }
+
+
+    .report-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .report-progress-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =====================================================
+   SUPERVISOR DASHBOARD
+===================================================== */
+
+.dashboard-content .notification-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.dashboard-content .notification-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 18px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    background: white;
+}
+
+
+.dashboard-content .notification-item:hover {
+    background: #f9fafb;
+}
+
+
+.dashboard-content .notification-content h3 {
+    margin: 0 0 6px 0;
+
+    font-size: 16px;
+}
+
+
+.dashboard-content .notification-content p {
+    margin: 0 0 7px 0;
+
+    color: #6b7280;
+
+    line-height: 1.5;
+}
+
+
+.dashboard-content .notification-time {
+    color: #9ca3af;
+
+    font-size: 13px;
+}
+/* =====================================================
+   SUPERVISOR - MY STUDENTS
+===================================================== */
+
+.student-list-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+
+.student-list-header h2 {
+    margin: 0 0 7px 0;
+}
+
+
+.student-list-header p {
+    margin: 0;
+
+    color: #6b7280;
+}
+
+
+.student-search input {
+    width: 250px;
+
+    padding: 11px 14px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+
+.student-search input:focus {
+    border-color: #1d4ed8;
+
+    box-shadow:
+        0 0 0 2px rgba(29, 78, 216, 0.1);
+}
+
+
+/* View button */
+
+.view-student-btn {
+    padding: 7px 14px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #1d4ed8;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.view-student-btn:hover {
+    background: #1e40af;
+}
+
+
+/* Close button */
+
+.close-details-btn {
+    padding: 8px 15px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 5px;
+
+    background: white;
+
+    color: #374151;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.close-details-btn:hover {
+    background: #f3f4f6;
+}
+
+
+/* Student details */
+
+.student-details-panel {
+    border-top: 4px solid #1d4ed8;
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+    .student-list-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .student-search {
+        width: 100%;
+    }
+
+
+    .student-search input {
+        width: 100%;
+    }
+
+}
+/* =====================================================
+   SUPERVISOR EVALUATIONS
+===================================================== */
+
+.evaluation-status {
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+.evaluation-status.pending {
+    background: #fef3c7;
+
+    color: #92400e;
+}
+
+
+.evaluation-status.completed {
+    background: #dcfce7;
+
+    color: #166534;
+}
+
+
+.evaluate-btn {
+    padding: 8px 14px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #1d4ed8;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.evaluate-btn:hover {
+    background: #1e40af;
+}
+
+
+.evaluate-btn:disabled {
+    background: #9ca3af;
+
+    cursor: not-allowed;
+}
+
+
+/* =====================================================
+   EVALUATION FORM
+===================================================== */
+
+.evaluation-form-section {
+    border-top: 4px solid #1d4ed8;
+}
+
+
+.close-evaluation-btn {
+    padding: 8px 15px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 5px;
+
+    background: white;
+
+    color: #374151;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.close-evaluation-btn:hover {
+    background: #f3f4f6;
+}
+
+
+/* =====================================================
+   STUDENT INFORMATION
+===================================================== */
+
+.evaluation-student-info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+    padding: 18px;
+
+    background: #f8fafc;
+
+    border-radius: 7px;
+}
+
+
+.evaluation-student-info div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.evaluation-student-info strong {
+    font-size: 12px;
+
+    color: #6b7280;
+
+    text-transform: uppercase;
+}
+
+
+.evaluation-student-info span {
+    font-weight: 600;
+
+    color: #111827;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.evaluation-form-section .form-group {
+    margin-bottom: 20px;
+}
+
+
+.evaluation-form-section label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #374151;
+}
+
+
+.evaluation-form-section input,
+.evaluation-form-section select,
+.evaluation-form-section textarea {
+    width: 100%;
+
+    padding: 11px 13px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    font-family: inherit;
+
+    box-sizing: border-box;
+}
+
+
+.evaluation-form-section input:focus,
+.evaluation-form-section select:focus,
+.evaluation-form-section textarea:focus {
+    border-color: #1d4ed8;
+
+    box-shadow:
+        0 0 0 2px rgba(29, 78, 216, 0.1);
+}
+
+
+.evaluation-form-section textarea {
+    resize: vertical;
+
+    min-height: 120px;
+}
+
+
+.required {
+    color: #dc2626;
+}
+
+
+/* =====================================================
+   FORM BUTTONS
+===================================================== */
+
+.evaluation-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+
+.cancel-evaluation-btn,
+.submit-evaluation-btn {
+    padding: 10px 18px;
+
+    border-radius: 5px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.cancel-evaluation-btn {
+    border: 1px solid #d1d5db;
+
+    background: white;
+
+    color: #374151;
+}
+
+
+.cancel-evaluation-btn:hover {
+    background: #f3f4f6;
+}
+
+
+.submit-evaluation-btn {
+    border: none;
+
+    background: #16a34a;
+
+    color: white;
+}
+
+
+.submit-evaluation-btn:hover {
+    background: #15803d;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .evaluation-student-info {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .evaluation-student-info {
+        grid-template-columns: 1fr;
+    }
+
+
+    .evaluation-actions {
+        flex-direction: column;
+    }
+
+
+    .cancel-evaluation-btn,
+    .submit-evaluation-btn {
+        width: 100%;
+    }
+
+}
+/* =====================================================
+   SUPERVISOR NOTIFICATIONS
+===================================================== */
+
+.notification-controls {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 20px;
+}
+
+
+.notification-search {
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.notification-filter {
+    width: 200px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.notification-search label,
+.notification-filter label {
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #374151;
+}
+
+
+.notification-search input,
+.notification-filter select {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 11px 13px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 6px;
+
+    background: white;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+
+.notification-search input:focus,
+.notification-filter select:focus {
+    border-color: #1d4ed8;
+
+    box-shadow:
+        0 0 0 2px rgba(29, 78, 216, 0.1);
+}
+
+
+/* =====================================================
+   NOTIFICATION LIST
+===================================================== */
+
+.supervisor-notification-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+.supervisor-notification {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding: 18px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    background: white;
+
+    transition: 0.2s ease;
+}
+
+
+.supervisor-notification:hover {
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+
+.supervisor-notification.unread {
+    border-left: 4px solid #1d4ed8;
+
+    background: #f8fbff;
+}
+
+
+.supervisor-notification.read {
+    opacity: 0.75;
+}
+
+
+/* =====================================================
+   NOTIFICATION ICON
+===================================================== */
+
+.supervisor-notification-icon {
+    width: 45px;
+
+    height: 45px;
+
+    min-width: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eff6ff;
+
+    font-size: 21px;
+}
+
+
+/* =====================================================
+   NOTIFICATION CONTENT
+===================================================== */
+
+.supervisor-notification-content {
+    flex: 1;
+}
+
+
+.notification-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 6px;
+}
+
+
+.notification-top h3 {
+    margin: 0;
+
+    font-size: 15px;
+
+    color: #111827;
+}
+
+
+.notification-top span {
+    padding: 4px 9px;
+
+    border-radius: 12px;
+
+    background: #f3f4f6;
+
+    color: #6b7280;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+.supervisor-notification-content p {
+    margin: 0 0 7px 0;
+
+    color: #6b7280;
+
+    line-height: 1.5;
+
+    font-size: 14px;
+}
+
+
+.supervisor-notification-content small {
+    color: #9ca3af;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   READ BUTTON
+===================================================== */
+
+.read-btn {
+    padding: 7px 11px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 5px;
+
+    background: white;
+
+    color: #374151;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+
+.read-btn:hover {
+    background: #f3f4f6;
+}
+
+
+.read-btn:disabled {
+    cursor: default;
+
+    color: #16a34a;
+
+    border-color: #bbf7d0;
+
+    background: #f0fdf4;
+}
+
+
+/* =====================================================
+   MARK ALL BUTTON
+===================================================== */
+
+.mark-all-btn {
+    padding: 8px 14px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 5px;
+
+    background: white;
+
+    color: #374151;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.mark-all-btn:hover {
+    background: #f3f4f6;
+}
+
+
+/* =====================================================
+   EMPTY NOTIFICATIONS
+===================================================== */
+
+.empty-notifications {
+    text-align: center;
+
+    padding: 45px 20px;
+
+    color: #6b7280;
+}
+
+
+.empty-notifications div {
+    font-size: 40px;
+
+    margin-bottom: 10px;
+}
+
+
+.empty-notifications h3 {
+    margin-bottom: 7px;
+
+    color: #374151;
+}
+
+
+.empty-notifications p {
+    margin: 0;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .notification-controls {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .notification-filter {
+        width: 100%;
+    }
+
+
+    .supervisor-notification {
+        flex-direction: column;
+    }
+
+
+    .supervisor-notification-icon {
+        align-self: flex-start;
+    }
+
+
+    .notification-top {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .read-btn {
+        width: 100%;
+    }
+
+}
+/* =====================================================
+   SUPERVISOR REPORTS
+===================================================== */
+
+.report-actions {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+
+.report-action-btn {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 7px;
+
+    padding: 20px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    background: white;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition: 0.2s ease;
+}
+
+
+.report-action-btn:hover {
+    border-color: #1d4ed8;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.07);
+
+    transform: translateY(-2px);
+}
+
+
+.report-action-btn span {
+    font-size: 28px;
+}
+
+
+.report-action-btn strong {
+    font-size: 15px;
+
+    color: #111827;
+}
+
+
+.report-action-btn small {
+    color: #6b7280;
+
+    line-height: 1.4;
+}
+
+
+/* =====================================================
+   REPORT STATUS
+===================================================== */
+
+.report-status {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+.report-status.pending {
+    background: #fef3c7;
+
+    color: #92400e;
+}
+
+
+.report-status.active {
+    background: #dcfce7;
+
+    color: #166534;
+}
+
+
+.report-status.completed {
+    background: #dbeafe;
+
+    color: #1e40af;
+}
+
+
+/* =====================================================
+   EVALUATION SUMMARY
+===================================================== */
+
+.evaluation-summary {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+.evaluation-report-card {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 18px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    background: white;
+}
+
+
+.evaluation-report-card h3 {
+    margin: 0 0 5px 0;
+
+    font-size: 16px;
+}
+
+
+.evaluation-report-card p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+.evaluation-result {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 5px;
+}
+
+
+.evaluation-result span {
+    color: #6b7280;
+
+    font-size: 12px;
+}
+
+
+.evaluation-result strong {
+    color: #92400e;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   REPORT INFORMATION
+===================================================== */
+
+.report-information h2 {
+    margin-top: 0;
+
+    margin-bottom: 20px;
+}
+
+
+.report-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+
+.report-info-grid div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    padding: 16px;
+
+    background: #f8fafc;
+
+    border-radius: 7px;
+}
+
+
+.report-info-grid strong {
+    color: #6b7280;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+}
+
+
+.report-info-grid span {
+    color: #111827;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   PRINT
+===================================================== */
+
+@media print {
+
+    .sidebar,
+    .dashboard-navbar,
+    .report-actions,
+    .logout-btn {
+        display: none !important;
+    }
+
+
+    .dashboard-layout {
+        display: block;
+    }
+
+
+    .dashboard-content {
+        width: 100%;
+
+        margin: 0;
+
+        padding: 20px;
+    }
+
+
+    .dashboard-section {
+        break-inside: avoid;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .report-actions {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .report-info-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .report-actions {
+        grid-template-columns: 1fr;
+    }
+
+
+    .report-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .evaluation-report-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .evaluation-result {
+        align-items: flex-start;
+    }
+
+}
+/* =====================================================
+   STUDENT PROFILE
+===================================================== */
+
+.student-profile-card {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    padding: 25px;
+}
+
+
+.student-profile-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+.profile-avatar {
+    width: 65px;
+
+    height: 65px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #eff6ff;
+
+    color: #1d4ed8;
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+
+.student-profile-header h2 {
+    margin: 0 0 5px 0;
+
+    font-size: 20px;
+
+    color: #111827;
+}
+
+
+.student-profile-header p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+.profile-status {
+    margin-left: auto;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background: #dcfce7;
+
+    color: #166534;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* STUDENT DETAILS */
+
+.student-details-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-top: 25px;
+}
+
+
+.student-detail {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    padding: 15px;
+
+    background: #f8fafc;
+
+    border-radius: 7px;
+}
+
+
+.student-detail span {
+    color: #6b7280;
+
+    font-size: 12px;
+}
+
+
+.student-detail strong {
+    color: #111827;
+
+    font-size: 14px;
+}
+
+
+/* ATTACHMENT DETAILS */
+
+.attachment-details-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+
+.attachment-details-grid div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    padding: 18px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 7px;
+
+    background: white;
+}
+
+
+.attachment-details-grid span {
+    color: #6b7280;
+
+    font-size: 12px;
+}
+
+
+.attachment-details-grid strong {
+    color: #111827;
+
+    font-size: 14px;
+}
+
+
+/* QUICK ACTIONS */
+
+.profile-actions {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+
+.profile-action-btn {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 7px;
+
+    padding: 20px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    background: white;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+
+.profile-action-btn:hover {
+    border-color: #1d4ed8;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+
+.profile-action-btn span {
+    font-size: 27px;
+}
+
+
+.profile-action-btn strong {
+    color: #111827;
+
+    font-size: 15px;
+}
+
+
+.profile-action-btn small {
+    color: #6b7280;
+
+    line-height: 1.4;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .student-details-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .attachment-details-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .profile-actions {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .student-profile-header {
+        flex-wrap: wrap;
+    }
+
+
+    .profile-status {
+        margin-left: 0;
+    }
+
+
+    .student-details-grid,
+    .attachment-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =====================================================
+   SUPERVISOR LOGBOOK
+===================================================== */
+
+.table-action-btn {
+    border: none;
+    background: #eff6ff;
+    color: #1d4ed8;
+    padding: 7px 13px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.table-action-btn:hover {
+    background: #dbeafe;
+}
+
+
+.report-status.approved {
+    background: #dcfce7;
+    color: #166534;
+}
+
+
+.report-status.pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+
+/* LOGBOOK MODAL */
+
+.entry-modal {
+    display: none;
+
+    position: fixed;
+
+    z-index: 1000;
+
+    left: 0;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+
+.entry-modal-content {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 550px;
+
+    background: white;
+
+    border-radius: 10px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+.entry-modal-content h2 {
+    margin-top: 0;
+
+    margin-bottom: 25px;
+
+    color: #111827;
+}
+
+
+.modal-close {
+    position: absolute;
+
+    right: 18px;
+
+    top: 14px;
+
+    border: none;
+
+    background: none;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    color: #6b7280;
+}
+
+
+.modal-close:hover {
+    color: #111827;
+}
+
+
+.modal-details {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+
+.modal-details div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding: 12px;
+
+    background: #f8fafc;
+
+    border-radius: 6px;
+}
+
+
+.modal-details span {
+    font-size: 12px;
+
+    color: #6b7280;
+}
+
+
+.modal-details strong {
+    font-size: 14px;
+
+    color: #111827;
+}
+
+
+.modal-buttons {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+
+.approve-btn,
+.reject-btn {
+    border: none;
+
+    padding: 10px 18px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+
+.approve-btn {
+    background: #16a34a;
+
+    color: white;
+}
+
+
+.approve-btn:hover {
+    background: #15803d;
+}
+
+
+.reject-btn {
+    background: #dc2626;
+
+    color: white;
+}
+
+
+.reject-btn:hover {
+    background: #b91c1c;
+}
+
+
+@media (max-width: 700px) {
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+
+    .entry-modal-content {
+        padding: 22px;
+    }
+
+}
+
+/* =====================================================
+   OVERRIDES
+===================================================== */
+
+.status-badge,
+.logbook-status,
+.evaluation-status,
+.report-status,
+.notification-type,
+.notification-top span,
+.profile-status {
+    border-radius: 4px;
+}
+
+.feature-card:hover,
+.action-card:hover,
+.report-action-btn:hover,
+.profile-action-btn:hover {
+    transform: none;
+}
+
+.hero {
+    background: #f5f7fb;
+}
+
+footer a {
+    color: #d1d5db;
+    text-decoration: none;
+    margin: 0 12px;
+}
+
+footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px 20px 70px;
+    line-height: 1.7;
+}
+
+.legal-content h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.legal-content h2 {
+    font-size: 21px;
+    margin: 32px 0 10px;
+}
+
+.legal-content p,
+.legal-content li {
+    color: #374151;
+}
+
+.legal-content ul {
+    margin: 0 0 12px 22px;
+}
+
+.legal-updated {
+    color: #6b7280;
+    margin-bottom: 25px;
+}
+.week-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    margin-top: 12px;
+    padding: 14px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: #f9fafb;
+    color: #1f2937;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+}
+
+.week-toggle:hover {
+    background: #f3f4f6;
+}
+
+.week-toggle-meta {
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.week-toggle-state {
+    margin-left: 14px;
+    color: #1d4ed8;
+}
+
+.week-panel {
+    margin: 12px 0 6px;
+}

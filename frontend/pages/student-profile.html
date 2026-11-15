@@ -1,0 +1,78 @@
+﻿ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARMS | Student Profile</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+
+<header class="dashboard-navbar">
+    <div class="dashboard-logo">ARMS</div>
+    <div class="student-info">
+        <span id="supervisorGreetingName">Supervisor</span>
+        <button class="logout-btn" id="logoutBtn">Logout</button>
+    </div>
+</header>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+        <h3>Supervisor Portal</h3>
+        <nav>
+            <a href="supervisor-dashboard.html">Dashboard</a>
+            <a href="supervisor-students.html">My Students</a>
+            <a href="supervisor-logbooks.html">Logbook Entries</a>
+            <a href="supervisor-evaluations.html">Evaluations</a>
+            <a href="supervisor-notifications.html">Notifications</a>
+            <a href="supervisor-reports.html">Reports</a>
+        </nav>
+    </aside>
+
+    <main class="dashboard-content">
+
+        <div class="dashboard-header">
+            <h1 id="spName">Student Profile</h1>
+            <p>Full profile and attachment details.</p>
+        </div>
+
+        <section class="dashboard-section">
+            <h2>Personal Information</h2>
+            <div class="profile-grid">
+                <div class="report-item"><span>Registration No.</span><strong id="spRegistration">--</strong></div>
+                <div class="report-item"><span>Email</span><strong id="spEmail">--</strong></div>
+                <div class="report-item"><span>Phone</span><strong id="spPhone">--</strong></div>
+                <div class="report-item"><span>Course</span><strong id="spCourse">--</strong></div>
+                <div class="report-item"><span>Year</span><strong id="spYear">--</strong></div>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <h2>Attachment</h2>
+            <div class="profile-grid">
+                <div class="report-item"><span>Organization</span><strong id="spOrganization">--</strong></div>
+                <div class="report-item"><span>Department</span><strong id="spDepartment">--</strong></div>
+                <div class="report-item"><span>Location</span><strong id="spLocation">--</strong></div>
+                <div class="report-item"><span>Start Date</span><strong id="spStartDate">--</strong></div>
+                <div class="report-item"><span>End Date</span><strong id="spEndDate">--</strong></div>
+                <div class="report-item"><span>Status</span><strong id="spStatus">--</strong></div>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <h2>Progress</h2>
+            <div class="profile-grid">
+                <div class="report-item"><span>Logbook Entries</span><strong id="spLogbookCount">0</strong></div>
+                <div class="report-item"><span>Evaluation Score</span><strong id="spEvalScore">Not yet evaluated</strong></div>
+            </div>
+        </section>
+
+    </main>
+
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

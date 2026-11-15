@@ -1,0 +1,103 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARMS | Notifications</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+
+<!-- TOP NAVIGATION -->
+<header class="dashboard-navbar">
+    <div class="dashboard-logo">
+        ARMS
+    </div>
+    <div class="student-info">
+        <span>Student</span>
+        <button class="logout-btn" id="logoutBtn">
+            Logout
+        </button>
+    </div>
+</header>
+
+<!-- DASHBOARD LAYOUT -->
+<div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h3>Student Portal</h3>
+        <nav>
+            <a href="student-dashboard.html">
+                Dashboard
+            </a>
+            <a href="profile.html">
+                My Profile
+            </a>
+            <a href="attachment.html">
+                Attachment
+            </a>
+            <a href="logbook.html">
+                Digital Logbook
+            </a>
+            <a href="evaluation.html">
+                Evaluation
+            </a>
+            <a href="notifications.html" class="active">
+                Notifications
+            </a>
+            <a href="reports.html">
+                Reports
+            </a>
+        </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-content">
+
+        <!-- PAGE HEADER -->
+        <div class="dashboard-header">
+            <h1>
+                Notifications
+            </h1>
+            <p>
+                View important updates and messages about your attachment.
+            </p>
+        </div>
+
+        <!-- NOTIFICATION ACTIONS -->
+        <section class="dashboard-section">
+
+            <div class="notification-header">
+                <h2>
+                    Recent Notifications
+                </h2>
+                <button class="mark-read-btn" id="markAllRead">
+                    Mark All as Read
+                </button>
+            </div>
+
+            <!-- NOTIFICATION LIST, populated dynamically by main.js -->
+            <div class="notification-list" id="notificationList">
+            </div>
+
+        </section>
+
+        <!-- EMPTY NOTIFICATIONS MESSAGE -->
+        <section class="dashboard-section notification-empty" id="emptyNotifications" style="display:none;">
+            <h2>
+                No Notifications
+            </h2>
+            <p>
+                You don't have any notifications at the moment.
+            </p>
+        </section>
+
+    </main>
+
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

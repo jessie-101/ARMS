@@ -1,0 +1,136 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARMS | Supervisor Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+
+<!-- TOP NAVIGATION -->
+<header class="dashboard-navbar">
+    <div class="dashboard-logo">
+        ARMS
+    </div>
+    <div class="student-info">
+        <span id="supervisorGreetingName">Supervisor</span>
+        <button class="logout-btn" id="logoutBtn">
+            Logout
+        </button>
+    </div>
+</header>
+
+<!-- DASHBOARD LAYOUT -->
+<div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h3>
+            Supervisor Portal
+        </h3>
+        <nav>
+            <a href="supervisor-dashboard.html" class="active">
+                Dashboard
+            </a>
+            <a href="supervisor-students.html">
+                My Students
+            </a>
+            <a href="supervisor-logbooks.html">
+                Logbook Entries
+            </a>
+            <a href="supervisor-evaluations.html">
+                Evaluations
+            </a>
+            <a href="supervisor-notifications.html">
+                Notifications
+            </a>
+            <a href="supervisor-reports.html">
+                Reports
+            </a>
+        </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-content">
+
+        <div class="dashboard-header">
+            <h1>
+                Supervisor Dashboard
+            </h1>
+            <p id="supervisorWelcomeMessage">
+                Welcome. Manage and monitor your assigned students.
+            </p>
+        </div>
+
+        <!-- SUMMARY CARDS -->
+        <div class="summary-cards">
+
+            <div class="summary-card">
+                <div>
+                    <h3>Assigned Students</h3>
+                    <p id="summaryStudentCount">0</p>
+                </div>
+            </div>
+
+            <div class="summary-card">
+                <div>
+                    <h3>Logbook Entries</h3>
+                    <p id="summaryLogbookCount">0</p>
+                </div>
+            </div>
+
+            <div class="summary-card">
+                <div>
+                    <h3>Evaluations Done</h3>
+                    <p id="summaryEvaluationCount">0</p>
+                </div>
+            </div>
+
+            <div class="summary-card">
+                <div>
+                    <h3>Pending Reviews</h3>
+                    <p id="summaryPendingCount">0</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- STUDENTS -->
+        <section class="dashboard-section">
+            <div class="section-heading">
+                <h2>
+                    My Students
+                </h2>
+                <a href="supervisor-students.html" class="view-all-btn">
+                    View All
+                </a>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Registration No.</th>
+                            <th>Course</th>
+                            <th>Year</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dashboardStudentsTable">
+                        <tr>
+                            <td colspan="4">No students assigned yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARMS | Login</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+
+<!-- Navigation -->
+<header class="navbar">
+    <div class="logo">
+        ARMS
+    </div>
+    <nav>
+        <a href="../index.html">
+            Home
+        </a>
+        <a href="login.html">
+            Login
+        </a>
+        <a href="register.html">
+            Register
+        </a>
+    </nav>
+</header>
+
+<!-- Login Section -->
+<main class="auth-container">
+    <div class="auth-card">
+        <div class="auth-header">
+            <h1>Welcome Back</h1>
+            <p>
+                Login to your ARMS account
+            </p>
+        </div>
+
+        <!-- Error message area -->
+        <p id="loginError" class="form-error" style="display:none; color:#c0392b;"></p>
+
+        <!-- User Type -->
+        <div class="form-group">
+            <label for="userType">
+                Login As
+            </label>
+            <select id="userType" name="userType">
+                <option value="student">
+                    Student
+                </option>
+                <option value="supervisor">
+                    Supervisor
+                </option>
+                <option value="admin">
+                    Administrator
+                </option>
+            </select>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">
+                Email Address
+            </label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+            >
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+            <label for="password">
+                Password
+            </label>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+            >
+        </div>
+
+        <!-- Remember Me -->
+        <div class="remember">
+            <label>
+                <input
+                    type="checkbox"
+                    id="remember"
+                >
+                Remember me
+            </label>
+            <a href="forgot-password.html">
+                Forgot password?
+            </a>
+        </div>
+
+        <!-- Login Button -->
+        <button
+            type="button"
+            class="auth-btn"
+            id="loginBtn"
+        >
+            Login
+        </button>
+
+        <!-- Register -->
+        <p class="auth-footer">
+            Don't have an account?
+            <a href="register.html">
+                Register here
+            </a>
+        </p>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer>
+    <p>
+        © 2026 Attachment Record Management System
+    </p>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html> 

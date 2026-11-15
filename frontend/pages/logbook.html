@@ -1,0 +1,231 @@
+﻿ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ARMS | Digital Logbook</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+
+
+<body>
+
+
+    <!-- TOP NAVIGATION -->
+    <header class="dashboard-navbar">
+
+        <div class="dashboard-logo">
+            ARMS
+        </div>
+
+        <div class="student-info">
+
+            <span>Student</span>
+
+            <button
+                class="logout-btn"
+                id="logoutBtn">
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- DASHBOARD LAYOUT -->
+    <div class="dashboard-layout">
+
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <h3>Student Portal</h3>
+
+            <nav>
+
+                <a href="student-dashboard.html">Dashboard</a>
+                <a href="profile.html">My Profile</a>
+                <a href="attachment.html">Attachment</a>
+                <a href="logbook.html" class="active">Digital Logbook</a>
+                <a href="evaluation.html">Evaluation</a>
+                <a href="notifications.html">Notifications</a>
+                <a href="reports.html">Reports</a>
+
+            </nav>
+
+        </aside>
+
+
+
+        <!-- MAIN CONTENT -->
+        <main class="dashboard-content">
+
+
+            <!-- PAGE HEADER -->
+            <div class="dashboard-header">
+
+                <h1>Digital Logbook</h1>
+
+                <p>
+                    Record and manage your daily attachment activities.
+                </p>
+
+            </div>
+
+
+
+            <!-- NEW LOGBOOK ENTRY -->
+            <section class="dashboard-section">
+
+                <h2>Add Daily Activity</h2>
+
+
+                <form id="logbookForm">
+
+
+                    <!-- DATE -->
+                    <div class="form-group">
+
+                        <label for="activityDate">
+                            Activity Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="activityDate"
+                            name="activityDate"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- ACTIVITY -->
+                    <div class="form-group">
+
+                        <label for="activity">
+                            Activities Performed
+                        </label>
+
+                        <textarea
+                            id="activity"
+                            name="activity"
+                            rows="5"
+                            placeholder="Describe the activities you performed today..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <!-- SKILLS -->
+                    <div class="form-group">
+
+                        <label for="skills">
+                            Skills / Knowledge Acquired
+                        </label>
+
+                        <textarea
+                            id="skills"
+                            name="skills"
+                            rows="4"
+                            placeholder="Describe the skills or knowledge you gained..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <!-- CHALLENGES -->
+                    <div class="form-group">
+
+                        <label for="challenges">
+                            Challenges Encountered
+                        </label>
+
+                        <textarea
+                            id="challenges"
+                            name="challenges"
+                            rows="4"
+                            placeholder="Describe any challenges you encountered..."
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <!-- REMARKS -->
+                    <div class="form-group">
+
+                        <label for="remarks">
+                            Remarks
+                        </label>
+
+                        <textarea
+                            id="remarks"
+                            name="remarks"
+                            rows="3"
+                            placeholder="Additional remarks..."
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <!-- BUTTONS -->
+                    <div class="attachment-actions">
+
+                        <button
+                            type="submit"
+                            class="auth-btn">
+
+                            Submit Logbook Entry
+
+                        </button>
+
+
+                        <button
+                            type="reset"
+                            class="reset-btn">
+
+                            Clear
+
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+            </section>
+         
+            <!-- LOGBOOK HISTORY -->
+        <section class="dashboard-section">
+                <h2>My Logbook</h2>
+                <div id="logbookWeeks">Loading...</div>
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+
+    <script src="../js/main.js"></script>
+
+</body>
+
+</html>

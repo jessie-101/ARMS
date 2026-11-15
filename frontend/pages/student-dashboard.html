@@ -1,0 +1,181 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARMS | Student Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+
+<!-- Dashboard Navigation -->
+<header class="dashboard-navbar">
+    <div class="dashboard-logo">
+        ARMS
+    </div>
+    <div class="student-info">
+        <span>Student</span>
+        <button class="logout-btn" id="logoutBtn">
+            Logout
+        </button>
+    </div>
+</header>
+
+<!-- Dashboard Layout -->
+<div class="dashboard-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h3>Student Portal</h3>
+        <nav>
+            <a href="student-dashboard.html" class="active">
+                Dashboard
+            </a>
+            <a href="profile.html">
+                My Profile
+            </a>
+            <a href="attachment.html">
+                Attachment
+            </a>
+            <a href="logbook.html">
+                Digital Logbook
+            </a>
+            <a href="evaluation.html">
+                Evaluation
+            </a>
+            <a href="notifications.html">
+                Notifications
+            </a>
+            <a href="reports.html">
+                Reports
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-content">
+
+        <!-- Welcome -->
+        <div class="dashboard-header">
+            <div>
+                <h1>Student Dashboard</h1>
+                <p>
+                    Welcome back! Manage your attachment records from here.
+                </p>
+            </div>
+        </div>
+
+        <!-- Summary Cards -->
+        <section class="summary-cards">
+
+            <div class="summary-card">
+                <div>
+                    <h3>Attachment Status</h3>
+                    <p id="attachmentStatus">
+                        Not Started
+                    </p>
+                </div>
+            </div>
+
+            <div class="summary-card">
+                <div>
+                    <h3>Logbook Entries</h3>
+                    <p id="logbookCount">
+                        0
+                    </p>
+                </div>
+            </div>
+
+            <div class="summary-card">
+                <div>
+                    <h3>Supervisor</h3>
+                    <p id="supervisorName">
+                        Not Assigned
+                    </p>
+                </div>
+            </div>
+
+            <div class="summary-card">
+                <div>
+                    <h3>Evaluation</h3>
+                    <p id="evaluationStatus">
+                        Pending
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="dashboard-section">
+            <h2>Quick Actions</h2>
+            <div class="quick-actions">
+
+                <a href="attachment.html" class="action-card">
+                    <h3>Attachment Details</h3>
+                    <p>
+                        Add or update your attachment placement.
+                    </p>
+                </a>
+
+                <a href="logbook.html" class="action-card">
+                    <h3>Update Logbook</h3>
+                    <p>
+                        Record today's attachment activity.
+                    </p>
+                </a>
+
+                <a href="profile.html" class="action-card">
+                    <h3>My Profile</h3>
+                    <p>
+                        View and update your personal information.
+                    </p>
+                </a>
+
+                <a href="reports.html" class="action-card">
+                    <h3>View Reports</h3>
+                    <p>
+                        View your attachment reports.
+                    </p>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Recent Activities -->
+        <section class="dashboard-section">
+            <div class="section-heading">
+                <h2>Recent Logbook Activities</h2>
+                <a href="logbook.html">
+                    View All
+                </a>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Activity</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recentActivities">
+                        <tr>
+                            <td colspan="3">
+                                No logbook activities available.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
