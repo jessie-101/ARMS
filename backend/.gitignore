@@ -1,34 +1,11 @@
-# Dependencies
 node_modules/
-backend/node_modules/
-
-# Environment variables and secrets
 .env
 .env.*
 !.env.example
-
-# Logs
-*.log
-npm-debug.log*
-
-# System files
-.DS_Store
-Thumbs.db
-
-# Build files
-dist/
-build/
-# Uploaded/generated files
-backend/uploads/*
-!backend/uploads/.gitkeep
-# Uploaded/generated reports and files
 backend/uploads/
-*.txt
-
-# Backup folders
 frontend_backup_1111/
 pages_backup/
-
-# Temporary output files
-backend/error.txt
-frontend/dashboard_output.txt
+.vscode/
+*.ps1
+dashboard_output.txt
+frontend/js/test.js
