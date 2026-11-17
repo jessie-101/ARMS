@@ -169,9 +169,6 @@ async function loadCurrentAttachment() {
         set("caSupervisor", a.supervisor_name);
         set("caSupervisorPhone", a.supervisor_phone);
         set("caSupervisorEmail", a.supervisor_email);
-        set("caAssessor", a.assessor_name);
-        set("caAssessorPhone", a.assessor_phone);
-        set("caAssessorEmail", a.assessor_email);
         set("caStatus", a.status);
         details.style.display = "grid";
         document.getElementById("noAttachmentText").style.display = "none";
@@ -195,9 +192,6 @@ function setupAttachmentForm() {
             supervisor_name: document.getElementById("supervisorName").value.trim() || null,
             supervisor_email: document.getElementById("supervisorEmail").value.trim() || null,
             supervisor_phone: document.getElementById("supervisorPhone").value.trim() || null,
-            assessor_name: document.getElementById("assessorName").value.trim() || null,
-            assessor_phone: document.getElementById("assessorPhone").value.trim() || null,
-            assessor_email: document.getElementById("assessorEmail").value.trim() || null,
             start_date: document.getElementById("startDate").value,
             end_date: document.getElementById("endDate").value
         };
