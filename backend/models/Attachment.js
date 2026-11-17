@@ -1,15 +1,15 @@
 const db = require("../config/db");
 
-// Create a new attachment record for a student
 const addAttachment = (data, callback) => {
     const sql = `
         INSERT INTO attachment_records
         (
             student_id, organization_name, organization_type, department,
             county, town, supervisor_name, supervisor_phone, supervisor_email,
+            assessor_name, assessor_phone, assessor_email,
             academic_supervisor_id, start_date, end_date
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
 
     db.query(
@@ -24,6 +24,9 @@ const addAttachment = (data, callback) => {
             data.supervisor_name,
             data.supervisor_phone,
             data.supervisor_email,
+            data.assessor_name,
+            data.assessor_phone,
+            data.assessor_email,
             data.academic_supervisor_id || null,
             data.start_date,
             data.end_date
@@ -32,7 +35,6 @@ const addAttachment = (data, callback) => {
     );
 };
 
-// Get the attachment record belonging to one student
 const getByStudentId = (studentId, callback) => {
     const sql = `SELECT * FROM attachment_records WHERE student_id = ? LIMIT 1`;
     db.query(sql, [studentId], callback);

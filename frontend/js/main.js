@@ -169,6 +169,9 @@ async function loadCurrentAttachment() {
         set("caSupervisor", a.supervisor_name);
         set("caSupervisorPhone", a.supervisor_phone);
         set("caSupervisorEmail", a.supervisor_email);
+        set("caAssessor", a.assessor_name);
+        set("caAssessorPhone", a.assessor_phone);
+        set("caAssessorEmail", a.assessor_email);
         set("caStatus", a.status);
         details.style.display = "grid";
         document.getElementById("noAttachmentText").style.display = "none";
@@ -192,6 +195,9 @@ function setupAttachmentForm() {
             supervisor_name: document.getElementById("supervisorName").value.trim() || null,
             supervisor_email: document.getElementById("supervisorEmail").value.trim() || null,
             supervisor_phone: document.getElementById("supervisorPhone").value.trim() || null,
+            assessor_name: document.getElementById("assessorName").value.trim() || null,
+            assessor_phone: document.getElementById("assessorPhone").value.trim() || null,
+            assessor_email: document.getElementById("assessorEmail").value.trim() || null,
             start_date: document.getElementById("startDate").value,
             end_date: document.getElementById("endDate").value
         };
@@ -996,4 +1002,211 @@ document.addEventListener("click", (e) => {
     document.getElementById(`week-panel-${w}`).style.display = open ? "block" : "none";
     toggle.setAttribute("aria-expanded", String(open));
     toggle.querySelector(".week-toggle-state").textContent = open ? "Hide" : "Show";
+});
+function setupRegisterPage() {
+    const form = document.getElementById("registerForm");
+    if (!form) return;
+    const msg = document.getElementById("registerError");
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const show = (text, ok) => {
+            msg.style.color = ok ? "#2e7d32" : "#c0392b";
+            msg.textContent = text;
+            msg.style.display = "block";
+        };
+        const password = document.getElementById("password").value;
+        if (password.length < 6) return show("Password must be at least 6 characters.", false);
+        if (password !== document.getElementById("confirmPassword").value) return show("The two passwords do not match.", false);
+        const payload = {
+            registration_number: document.getElementById("registrationNumber").value.trim(),
+            first_name: document.getElementById("firstName").value.trim(),
+            last_name: document.getElementById("lastName").value.trim(),
+            email: document.getElementById("email").value.trim(),
+            phone_number: document.getElementById("phoneNumber").value.trim(),
+            course: document.getElementById("course").value.trim(),
+            year_of_study: parseInt(document.getElementById("yearOfStudy").value, 10),
+            password
+        };
+        const btn = form.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        btn.textContent = "Creating...";
+        try {
+            await apiFetch("/students/register", { method: "POST", body: JSON.stringify(payload) });
+            show("Account created. Taking you to the login page.", true);
+            setTimeout(() => { window.location.href = "login.html"; }, 1500);
+        } catch (err) {
+            show(err.message, false);
+            btn.disabled = false;
+            btn.textContent = "Create Account";
+        }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    setupRegisterPage();
+});
+
+async function loadProfilePage() {
+    const form = document.getElementById("profileForm");
+    if (!form) return;
+    if (!requireRole("student")) return;
+    const msg = document.getElementById("profileMessage");
+    const show = (text, ok) => {
+        msg.style.color = ok ? "#2e7d32" : "#c0392b";
+        msg.textContent = text;
+        msg.style.display = "block";
+    };
+    try {
+        const p = await apiFetch("/students/profile");
+        document.getElementById("profileName").textContent = `${p.first_name} ${p.last_name}`;
+        document.getElementById("profileRegistration").textContent = p.registration_number;
+        document.getElementById("registrationNumber").value = p.registration_number;
+        document.getElementById("firstName").value = p.first_name;
+        document.getElementById("lastName").value = p.last_name;
+        document.getElementById("email").value = p.email;
+        document.getElementById("phoneNumber").value = p.phone_number || "";
+        document.getElementById("course").value = p.course;
+        document.getElementById("yearOfStudy").value = String(p.year_of_study);
+    } catch (err) {
+        show(err.message, false);
+    }
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const payload = {
+            first_name: document.getElementById("firstName").value.trim(),
+            last_name: document.getElementById("lastName").value.trim(),
+            phone_number: document.getElementById("phoneNumber").value.trim() || null,
+            course: document.getElementById("course").value.trim(),
+            year_of_study: parseInt(document.getElementById("yearOfStudy").value, 10)
+        };
+        try {
+            await apiFetch("/students/profile", { method: "PUT", body: JSON.stringify(payload) });
+            document.getElementById("profileName").textContent = `${payload.first_name} ${payload.last_name}`;
+            show("Profile updated.", true);
+        } catch (err) {
+            show(err.message, false);
+        }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadProfilePage();
+});
+
+let adminSupervisors = [];
+
+function showAdminMessage(text, ok) {
+    const el = document.getElementById("adminMessage");
+    if (!el) return;
+    el.style.color = ok ? "#2e7d32" : "#c0392b";
+    el.textContent = text;
+    el.style.display = "block";
+}
+
+function renderAdminStudents(students) {
+    const body = document.getElementById("adminStudentsBody");
+    if (students.length === 0) {
+        body.innerHTML = `<tr><td colspan="6">No students registered yet.</td></tr>`;
+        return;
+    }
+    body.innerHTML = "";
+    students.forEach((s) => {
+        const current = s.supervisor_first_name
+            ? `${s.supervisor_first_name} ${s.supervisor_last_name}`
+            : "Not assigned";
+        let assignCell = "No attachment yet";
+        if (s.attachment_id) {
+            const options = adminSupervisors.map((sv) =>
+                `<option value="${sv.supervisor_id}"${sv.supervisor_id === s.academic_supervisor_id ? " selected" : ""}>${escapeHtml(sv.first_name)} ${escapeHtml(sv.last_name)}</option>`
+            ).join("");
+            assignCell = `<select id="assign-${s.student_id}"><option value="">Choose supervisor</option>${options}</select> <button type="button" class="reset-btn admin-assign-btn" data-student="${s.student_id}">Assign</button>`;
+        }
+        const row = document.createElement("tr");
+        row.innerHTML = `<td>${escapeHtml(s.first_name)} ${escapeHtml(s.last_name)}</td><td>${escapeHtml(s.registration_number)}</td><td>${escapeHtml(s.organization_name || "None")}</td><td>${escapeHtml(current)}</td><td>${assignCell}</td><td><button type="button" class="reset-btn admin-delete-student" data-student="${s.student_id}" data-name="${escapeHtml(s.first_name)} ${escapeHtml(s.last_name)}">Delete</button></td>`;
+        body.appendChild(row);
+    });
+}
+
+function renderAdminSupervisors(supervisors) {
+    const body = document.getElementById("adminSupervisorsBody");
+    if (supervisors.length === 0) {
+        body.innerHTML = `<tr><td colspan="4">No supervisors yet.</td></tr>`;
+        return;
+    }
+    body.innerHTML = "";
+    supervisors.forEach((sv) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `<td>${escapeHtml(sv.first_name)} ${escapeHtml(sv.last_name)}</td><td>${escapeHtml(sv.email)}</td><td>${escapeHtml(sv.department || "")}</td><td><button type="button" class="reset-btn admin-delete-supervisor" data-supervisor="${sv.supervisor_id}" data-name="${escapeHtml(sv.first_name)} ${escapeHtml(sv.last_name)}">Delete</button></td>`;
+        body.appendChild(row);
+    });
+}
+
+async function loadAdminData() {
+    try {
+        const students = await apiFetch("/admin/students");
+        adminSupervisors = await apiFetch("/admin/supervisors");
+        renderAdminStudents(students);
+        renderAdminSupervisors(adminSupervisors);
+    } catch (err) {
+        showAdminMessage(err.message, false);
+    }
+}
+
+document.addEventListener("click", async (e) => {
+    const assign = e.target.closest(".admin-assign-btn");
+    const delStudent = e.target.closest(".admin-delete-student");
+    const delSupervisor = e.target.closest(".admin-delete-supervisor");
+    try {
+        if (assign) {
+            const studentId = Number(assign.dataset.student);
+            const supervisorId = Number(document.getElementById(`assign-${studentId}`).value);
+            if (!supervisorId) return showAdminMessage("Choose a supervisor first.", false);
+            await apiFetch("/admin/assign-supervisor", { method: "POST", body: JSON.stringify({ student_id: studentId, supervisor_id: supervisorId }) });
+            showAdminMessage("Supervisor assigned.", true);
+            await loadAdminData();
+        } else if (delStudent) {
+            if (!confirm(`Delete ${delStudent.dataset.name} and all their records? This cannot be undone.`)) return;
+            await apiFetch(`/admin/students/${delStudent.dataset.student}`, { method: "DELETE" });
+            showAdminMessage("Student deleted.", true);
+            await loadAdminData();
+        } else if (delSupervisor) {
+            if (!confirm(`Delete supervisor ${delSupervisor.dataset.name}? Their students will become unassigned.`)) return;
+            await apiFetch(`/admin/supervisors/${delSupervisor.dataset.supervisor}`, { method: "DELETE" });
+            showAdminMessage("Supervisor deleted.", true);
+            await loadAdminData();
+        }
+    } catch (err) {
+        showAdminMessage(err.message, false);
+    }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (!document.getElementById("adminStudentsBody")) return;
+    if (!requireRole("admin")) return;
+    const user = getUser();
+    if (user) document.getElementById("adminGreetingName").textContent = user.full_name;
+    loadAdminData();
+    document.getElementById("addSupervisorForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const password = document.getElementById("svPassword").value;
+        if (password.length < 6) return showAdminMessage("The temporary password must be at least 6 characters.", false);
+        try {
+            await apiFetch("/supervisors/register", {
+                method: "POST",
+                body: JSON.stringify({
+                    first_name: document.getElementById("svFirstName").value.trim(),
+                    last_name: document.getElementById("svLastName").value.trim(),
+                    email: document.getElementById("svEmail").value.trim(),
+                    phone_number: document.getElementById("svPhone").value.trim(),
+                    department: document.getElementById("svDepartment").value.trim(),
+                    password
+                })
+            });
+            e.target.reset();
+            showAdminMessage("Supervisor added.", true);
+            await loadAdminData();
+        } catch (err) {
+            showAdminMessage(err.message, false);
+        }
+    });
 });
