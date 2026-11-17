@@ -21,7 +21,7 @@ SET @@SESSION.SQL_LOG_BIN= 0;
 -- GTID state at the beginning of the backup 
 --
 
-SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ 'f0283e71-f6b1-11f0-a33c-308d99194c5f:1-175';
+SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ 'f0283e71-f6b1-11f0-a33c-308d99194c5f:1-178';
 
 --
 -- Table structure for table `administrators`
@@ -63,6 +63,9 @@ CREATE TABLE `attachment_records` (
   `end_date` date NOT NULL,
   `status` enum('Pending','Active','Completed') DEFAULT 'Pending',
   `attachment_letter` varchar(255) DEFAULT NULL,
+  `assessor_name` varchar(100) DEFAULT NULL,
+  `assessor_phone` varchar(20) DEFAULT NULL,
+  `assessor_email` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`attachment_id`),
   KEY `fk_attachment_student` (`student_id`),
   KEY `fk_attachment_academic_supervisor` (`academic_supervisor_id`),
@@ -226,7 +229,7 @@ CREATE TABLE `supervisors` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`supervisor_id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -239,4 +242,4 @@ SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-11-16 11:18:51
+-- Dump completed on 2026-11-17 14:42:21
