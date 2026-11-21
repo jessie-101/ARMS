@@ -1,32 +1,24 @@
 const mysql = require("mysql2");
-require("dotenv").config();
 
-
-const db = mysql.createConnection({
-
+const db = mysql.createPool({
     host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    dateStrings: true
-
+    port: Number(process.env.DB_PORT) || 3306,
+    user: process.env.DB_USER || process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD || process.env.DB_PASS,
+    database: process.env.DB_NAME || process.env.DB_DATABASE,
+    dateStrings: true,
+    waitForConnections: true,
+    connectionLimit: 5,
+    ssl: process.env.DB_SSL === "true" ? { minVersion: "TLSv1.2", rejectUnauthorized: true } : undefined
 });
 
-
-db.connect((err)=>{
-
-    if(err){
-
-        console.log("Database connection failed");
-        console.log(err);
-
-    }else{
-
-        console.log("Connected to MySQL database");
-
+db.getConnection((err, connection) => {
+    if (err) {
+        console.log("MYSQL CONNECTION ERROR:", err.message);
+        return;
     }
-
+    console.log("Connected to MySQL database");
+    connection.release();
 });
-
 
 module.exports = db;

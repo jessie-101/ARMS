@@ -1,4 +1,6 @@
- const API_BASE_URL = "http://localhost:3001/api";
+const API_BASE_URL = (location.hostname === "127.0.0.1" || location.hostname === "localhost")
+    ? "http://localhost:3001/api"
+    : "https://YOUR-RENDER-ADDRESS.onrender.com/api";
 
 function saveSession(token, role, user) {
     sessionStorage.setItem("arms_token", token);

@@ -1,22 +1,12 @@
 const db = require("../config/db");
 
-// Save a record of a generated report
 const addReport = (data, callback) => {
-    const sql = `
-        INSERT INTO reports
-        (student_id, report_name, file_path)
-        VALUES (?, ?, ?)
-    `;
-    db.query(sql, [data.student_id, data.report_name, data.file_path], callback);
+    const sql = `INSERT INTO reports (student_id, report_name, file_path, content) VALUES (?, ?, ?, ?)`;
+    db.query(sql, [data.student_id, data.report_name, data.file_path || "", data.content || null], callback);
 };
 
-// Get all reports generated for one student
 const getByStudentId = (studentId, callback) => {
-    const sql = `
-        SELECT * FROM reports
-        WHERE student_id = ?
-        ORDER BY generated_at DESC
-    `;
+    const sql = `SELECT report_id, student_id, report_name, generated_at FROM reports WHERE student_id = ? ORDER BY report_id DESC`;
     db.query(sql, [studentId], callback);
 };
 

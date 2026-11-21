@@ -19,7 +19,9 @@ const notificationRoutes = require("./routes/notificationRoutes");
 const app = express();
 
 
-app.use(cors());
+app.use(cors({
+    origin: (process.env.FRONTEND_ORIGIN || "http://127.0.0.1:5500").split(",")
+}));
 
 app.use(express.json());
 
